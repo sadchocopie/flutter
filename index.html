@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>daniel aley</title>
+
+  <!-- Bootstrap -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+  <!--    jQuery and Popper-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!--Custom stylesheet-->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <!--    Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,700" rel="stylesheet">
+
+
+</head>
+
+
+<header>
+  <div class="navbar fixed-top">
+    <ul class=" nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Daniel aley</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="resume.html">Resume</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<body>
+
+  <nav class="col-md-4">
+    <ul>
+      <li><a href="#section-1" class="current">About</a></li>
+      <li><a href="#section-2">Design</a></li>
+      <li><a href="#section-3">Research</a></li>
+      <li><a href="#section-4">Motion Graphics</a></li>
+      <li><a href="#section-5">Other</a></li>
+    </ul>
+  </nav>
+
+
+  <main class="col-md-8">
+    <div class="projects">
+      <section id="section-1">
+        <div id="greetings" style="font-weight:300; padding-left: 19px; font-family: 'Source Code Pro', monospace; line-height:1.9;font-size: 12px">
+          <h1>About</h1>
+          <p>Hello. I like to investigate &amp; design the relationships between you and technology. <br>Together, let's explore.</p>
+        </div>
+      </section>
+
+
+
+      <section id="section-2">
+
+        <div id="greetings" style="font-weight:300; padding-left: 19px; font-family: 'Source Code Pro', monospace; line-height:1.9;font-size: 12px">
+          <h1>Design</h1>
+          <p>this is daniel's design projects</p>
+        </div>
+      </section>
+      <section id="section-3">
+        <div id="greetings" style="font-weight:300; padding-left: 19px; font-family: 'Source Code Pro', monospace; line-height:1.9;font-size: 12px">
+          <h1>Research</h1>
+          <p>this is daniel's research projects</p>
+        </div>
+      </section>
+      <section id="section-4">
+        <div id="greetings" style="font-weight:300; padding-left: 19px; font-family: 'Source Code Pro', monospace; line-height:1.9;font-size: 12px">
+          <h1>Motion Graphics</h1>
+          <p>this is daniel's motion graphics</p>
+        </div>
+      </section>
+      <section id="section-5">
+        <div id="greetings" style="font-weight:300; padding-left: 19px; font-family: 'Source Code Pro', monospace; line-height:1.9;font-size: 12px">
+          <h1>Other</h1>
+          <p>this is some other stuff</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy;2020 Daniel Aley
+  </footer>
+
+
+  <script>
+    let mainNavLinks = document.querySelectorAll("nav ul li a");
+    let mainSections = document.querySelectorAll("main section");
+
+    let lastId;
+    let cur = [];
+    window.addEventListener("scroll", () => {
+      _.throttle(doThatStuff, 100);
+    });
+
+    window.addEventListener("scroll", event => {
+      let fromTop = window.scrollY;
+
+      mainNavLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");
+        }
+      });
+    });
+
+  </script>>
+
+
+
+  <!--
+  <div class="col-md-12">
+    <div id="greetings" style="font-weight:300; padding-left: 19px; font-family: 'Source Code Pro', monospace; line-height:1.9;font-size: 12px">
+      <p> <b> Hello.</b> I like to investigate &amp; design the relationships between you and technology. <br>Together, let's explore.</p>
+    </div>
+  </div>
+  
+  
+  
+  
+
+
+  <div class="col-md-3">
+
+
+    <div class="containers">
+
+      <a href="sproutly.html" target="_self">
+        <img src="http://www.flutterspace.com/images/sproutlypreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 10px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>Sproutly: School Selection and Filtering</b></div>
+        </div>
+
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href="frk.html" target="_self">
+        <img src="http://www.flutterspace.com/images/frkPreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 10px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>Frk: Nutrition Management Made Easy</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href=Anew.html target="_self">
+        <img src="http://www.flutterspace.com/images/anewpreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 10px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>Anew: Charitable Microinvesting Made Easy</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href="glitch.html" target="_self">
+        <img src="http://www.flutterspace.com/images/glitchTile.png" class="img-responsive" alt="Glitch" style="width:100%; grid-gap: 10px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>Glitch: The Imperceivable Systems of Control</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href="datafest.html" target="_self">
+        <img src="http://www.flutterspace.com/images/datafestpreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 10px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>DataFest 2018: An Exploration of Sector Specific Trends in the Labor Market</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href="clinica.html" target="_self">
+        <img src="http://www.flutterspace.com/images/clinicapreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 5px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>Clinica: Accessible Biometric Data at the Tip of Your Tongue</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href="CycleAR.html" target="_self">
+        <img src="http://www.flutterspace.com/images/cycleARpreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 5px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>CycleAR: Augmented Optic Navigation: Under Construction</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="containers">
+
+      <a href="https://youtu.be/2lTvmCgPw1o" target="_blank">
+        <img src="http://www.flutterspace.com/images/typepreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 5px; padding-top: 10px;">
+        <div class="overlays">
+          <div class="texts"><b>Kinetic Type Motion Graphic</b></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  FOOTER
+
+  <div class="row">
+    <div class="col-xs-8">
+      <ul class="list-unstyled list-inline pull-left">
+        <li><a href="index.html">daniel aley</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li><a href="resume.html">resume</a></li>
+        <li><a href="api.html">api</a></li>
+      </ul>
+    </div>
+
+  </div>
+-->
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!--  <script src="js/bootstrap.min.js"></script>-->
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.nav.nav-tabs li a {
+  font-weight: bolder;
+  color: black;
+}
+
+body > .nav.nav-tabs li a {
+  margin-left: 9.10px;
+  margin-right: 0px;
+}
+
+
+#greetings {
+  /*text-align:justify;*/
+  font-weight: lighter;
+  font-size: 20px;
+  width: 100%;
+  max-width: 700px;
+  margin-left: 9.10px;
+  margin-right: auto;
+  padding-top: 20%;
+  padding-bottom: 3%;
+  padding-left: 1%;
+}
+
+.cols {
+  -moz-column-count: 2;
+  -moz-column-gap: 3%;
+  -moz-column-width: 5%;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 3%;
+  -webkit-column-width: 30%;
+  column-count: 3;
+  column-gap: 3%;
+  column-width: 30%;
+}
+
+.image {
+  margin-bottom: 10px;
+  height: 100px;
+  width: 100px;
+  background: #BFBFBF;
+}
+
+.image-block {
+  border: 3px solid white;
+  background-color: black;
+  padding: 0px;
+  margin: 0px;
+  height: 200px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.image-block > p {
+  width: 100%;
+  height: 100%;
+  font-weight: lighter;
+  font-size: 30px;
+  padding-top: 76px;
+  background-color: rgba(3, 3, 3, 0.0);
+  color: rgba(6, 6, 6, 0.0);
+}
+
+.image-block:hover > p {
+  background-color: rgba(255, 255, 255, 0.78);
+  color: black;
+}
+
+.list-unstyled.list-inline.pull-left {
+  padding-left: 3%;
+  padding-top: 1%;
+}
+
+.text-muted.pull-right {
+  padding-top: 12%;
+  padding-right: 15%;
+}
+
+.list-unstyled.list-inline.pull-left {
+  font-weight: lighter;
+  color: black;
+}
+
+.list-unstyled.list-inline.pull-left a:hover {
+  color: #000000;
+}
+
+.col-xs-8 {
+  margin-left: 9.10px;
+}
+
+.row {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  padding-left: -50px;
+}
+
+.img-responsive {
+  -webkit-animation: fadein 2.5s;
+  /* Safari and the Chrome browser, only the bestest. */
+  -moz-animation: fadein 2.5s;
+  /* Firefox the exploit...*/
+  -ms-animation: fadein 2.5s;
+  /* Internet Explorer who the hell uses this? */
+  -o-animation: fadein 2.5s;
+  /* Opera, its ok.*/
+  animation: fadein 2.5s;
+  /*fades might take up memory, just referesh page and should work UwU*/
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
