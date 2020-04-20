@@ -56,7 +56,7 @@ body {
 }
 
 nav {
-  margin-top: 9rem;
+  margin-top: 15rem;
   white-space: nowrap;
   /*  margin: 0em 0 0 0;*/
   font-family: "Work Sans";
@@ -154,6 +154,10 @@ footer {
 
 
 @media only screen and (max-width: 800px) {
+  nav {
+    margin-top: 9rem;
+  }
+
   nav ul li a {
     font-weight: 400;
     font-size: 14px;
@@ -192,6 +196,10 @@ footer {
 }
 
 @media only screen and (max-width: 400px) {
+  nav {
+    margin-top: 9rem;
+  }
+
   nav ul li a {
     font-weight: 400;
     font-size: 11px;
