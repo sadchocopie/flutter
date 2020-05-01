@@ -36,11 +36,109 @@ GENERAL KENOBI
   <link href="css/index.css" rel="stylesheet">
 
   <style>
+    .splash-container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .splash-item {
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      z-index: 2000;
+      -webkit-animation: fadein 1s;
+      /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 1s;
+      /* Firefox < 16 */
+      -ms-animation: fadein 1s;
+      /* Internet Explorer */
+      -o-animation: fadein 1s;
+      /* Opera < 12.1 */
+      animation: fadein 1s;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
   </style>
 </head>
 
 
 <body>
+
+  <!--Splash Screen-->
+  <div id="splash" class="splash-container col-md-12" style="background: #000; position: absolute;
+      z-index: 2000; width: 100%;">
+    <!--Center align Splash contents in all screen sizes-->
+    <div class="splash-item">
+      <img src="./assets/splash.png" alt="app_icon" style="width:100%;" />
+    </div>
+  </div>
+
   <header>
     <div class="navbar fixed-top">
       <ul class="nav">
@@ -55,8 +153,8 @@ GENERAL KENOBI
         </li>
       </ul>
     </div>
-
   </header>
+
 
   <nav class="sidenav col-md-4">
     <ul>
@@ -213,7 +311,6 @@ GENERAL KENOBI
       <div class="content">
         <h1>Other</h1>
         <p>this is some other stuff</p>
-        -->
         <!---------DATA FEST---------->
         <div class="row" id="datafest">
           <div class="col-lg-6">
@@ -314,24 +411,54 @@ GENERAL KENOBI
 
 
 
+  <!--  Scripts-->
+  <script type="text/javascript">
+    function fade(element) {
+      var op = 1; // initial opacity
+      var timer = setInterval(function() {
+        if (op <= 0.1) {
+          clearInterval(timer);
 
-  <!--
+          element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+      }, 50);
+    }
 
+    setTimeout(function() {
 
-  <div class="col-md-3">
+      if (typeof(Storage) !== "undefined") {
 
-    <div class="containers">
+        console.log("Already shown" + sessionStorage.getItem('spalashShown'));
 
-      <a href="CycleAR.html" target="_self">
-        <img src="http://www.flutterspace.com/images/cycleARpreview.png" class="img-responsive" alt="UI Design" style="width:100%; grid-gap: 5px; padding-top: 10px;">
-        <div class="overlays">
-          <div class="texts"><b>CycleAR: Augmented Optic Navigation: Under Construction</b></div>
-        </div>
-      </a>
-    </div>
-  </div>
+        if (!sessionStorage.getItem('spalashShown') || sessionStorage.getItem('spalashShown') === null) {
 
--->
+          document.getElementById('splash').style.display = 'inline';
+
+          //Display splash
+          setTimeout(function() {
+
+            fade(document.getElementById('splash'));
+            // document.getElementById('splash') .style.display = 'none'
+            // window.location = "http://hiteshsahu.com";
+
+            sessionStorage.setItem('spalashShown', true);
+          }, 1000);
+
+        } else {
+
+          //Display Main Content
+          document.getElementById('splash').style.display = 'none'
+          console.log("Already shown");
+        }
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }, 0);
+
+  </script>
 
 
 </body>
