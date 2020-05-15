@@ -40,37 +40,54 @@ GENERAL KENOBI
 
   <style>
     .splash-container {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-justify-content: center;
-      justify-content: center;
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      width: 100%;
+      margin: 0 auto;
+      background: black;
       z-index: 2000;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: minmax(40px, 800px);
     }
 
-    .splash-item {
-      /*
-      text-align: center;
+    .splash-item,
+    .splash-button {
+      /*      border: 2px solid white;*/
       margin: auto;
-      position: absolute;
-*/
-      display: flex;
-      align-items: center;
-      align-content: center;
-      text-align-last: center;
-      z-index: 2000;
     }
 
-    .enterButton {}
+    .enterButton {
+      margin: 0 auto;
+      color: white;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .enterButton:hover {
+      text-decoration: underline;
+    }
+
+    #badge {
+      width: 80vmin;
+      margin: auto;
+      max-width: 800px;
+    }
+
+    @media (max-width: 500px) {
+      .splash-container {
+        grid-template-columns: repeat(1, 1fr);
+        /*        background: pink;*/
+      }
+
+      .splash-item,
+      .splash-button {
+        margin: 1vmin auto;
+      }
+    }
 
   </style>
 </head>
@@ -78,14 +95,16 @@ GENERAL KENOBI
 <body>
 
   <!--Splash Screen-->
-  <div id="splash" class="splash-container col-md-12">
-    <!--Center align Splash contents in all screen sizes-->
-    <div class="splash-item" style="background: black; width: 100%; height: 100%;">
-      <img src="./assets/Badge.png" alt="app_icon" style="width:40%; margin:auto" />
-      <button class="enterButton bg-transparent border-0" id="enterButton" value="Button" style="padding-top: 60px; margin:auto; color: white; font-size: 24px; font-weight: 600;">ENTER</button>
+  <div class="splash-container" id="splash">
+    <div class="splash-item">
+      <img src="./assets/Badge.png" alt="app_icon" id="badge" />
     </div>
-    <!--      <img src="./assets/splash.png" alt="app_icon" style="width:100%;" />-->
+
+    <div class="splash-button">
+      <button class="enterButton bg-transparent border-0" id="enterButton" value="Button">ENTER</button>
+    </div>
   </div>
+
 
   <header>
     <div class="navbar fixed-top">
