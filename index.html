@@ -45,7 +45,6 @@ GENERAL KENOBI
       display: -moz-box;
       display: -ms-flexbox;
       display: flex;
-
       -webkit-align-items: center;
       align-items: center;
       -webkit-justify-content: center;
@@ -55,77 +54,23 @@ GENERAL KENOBI
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: 2000;
     }
 
     .splash-item {
+      /*
       text-align: center;
-      margin: 0;
+      margin: auto;
       position: absolute;
-      /*      z-index: 2000;*/
-      -webkit-animation: fadein 3s;
-      /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: fadein 3s;
-      /* Firefox < 16 */
-      -ms-animation: fadein 3s;
-      /* Internet Explorer */
-      -o-animation: fadein 3s;
-      /* Opera < 12.1 */
-      animation: fadein 3s;
+*/
+      display: flex;
+      align-items: center;
+      align-content: center;
+      text-align-last: center;
+      z-index: 2000;
     }
 
-    @keyframes fadein {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Firefox < 16 */
-    @-moz-keyframes fadein {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Safari, Chrome and Opera > 12.1 */
-    @-webkit-keyframes fadein {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Internet Explorer */
-    @-ms-keyframes fadein {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Opera < 12.1 */
-    @-o-keyframes fadein {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
+    .enterButton {}
 
   </style>
 </head>
@@ -133,11 +78,13 @@ GENERAL KENOBI
 <body>
 
   <!--Splash Screen-->
-  <div id="splash" class="splash-container col-md-12" style="width: 100%;">
+  <div id="splash" class="splash-container col-md-12">
     <!--Center align Splash contents in all screen sizes-->
-    <div class="splash-item">
-      <img src="./assets/splash.png" alt="app_icon" style="width:100%;" />
+    <div class="splash-item" style="background: black; width: 100%; height: 100%;">
+      <img src="./assets/Badge.png" alt="app_icon" style="width:40%; margin:auto" />
+      <button class="enterButton bg-transparent border-0" id="enterButton" value="Button" style="padding-top: 60px; margin:auto; color: white; font-size: 24px; font-weight: 600;">ENTER</button>
     </div>
+    <!--      <img src="./assets/splash.png" alt="app_icon" style="width:100%;" />-->
   </div>
 
   <header>
@@ -413,6 +360,7 @@ GENERAL KENOBI
 
 
   <!--  Scripts-->
+  <!--
   <script type="text/javascript">
     function fade(element) {
       var op = 1; // initial opacity
@@ -461,6 +409,14 @@ GENERAL KENOBI
 
   </script>
 
+-->
+
+  <script>
+    $('#enterButton').on('click', function() {
+      $(this).closest(".splash-container").remove();
+    });
+
+  </script>
 
 </body>
 
